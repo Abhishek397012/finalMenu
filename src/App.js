@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import fire from "./fire";
 import { render } from "@testing-library/react";
-import Menupage from './component/menupage'
+import Menupage from './component/Menupage'
 
 class App extends Component {
 

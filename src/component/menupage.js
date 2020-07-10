@@ -3,10 +3,10 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import fire from '../fire'
 import "react-tabs/style/react-tabs.css";
 import { render } from '@testing-library/react';
-import Each from './each'
+import Each from './Each'
 
 
-export class menupage extends Component {
+class Menupage extends Component {
 
   constructor(props) {
     super(props)
@@ -84,4 +84,4 @@ export class menupage extends Component {
   }
 }
 
-export default menupage
+export default Menupage
