@@ -3,29 +3,19 @@ import Draw from './draw'
 
 export class Each extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
 
     render() {
-        {console.log('this.props.category', this.props.category)}
-        {console.log('this.props.list', this.props.list)}
+        // { console.log('this.props.name', this.props.name) }
+        // { console.log('this.props.price', this.props.price) }
         return (
-            <div>
-                {this.props.list.map(element => {
-                    if (element.category === this.props.category) {
-                        {console.log('element.name match:', element.name)}
-                        return (
-                            <div >
-                                <div className="name">{element.name}</div>
-                                <div className="price">{element.price}</div>
-                                <br/>
-                            </div>
-                        )
-                    }
-                })
-                }
+            <div>   
+                <div className="name">{this.props.name}</div>
+                <div className="price">{this.props.price}</div>
+                <br />
             </div>
         )
     }

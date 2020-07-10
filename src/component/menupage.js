@@ -21,41 +21,41 @@ class Menupage extends Component {
     let list = []
     let ref1 = fire.database().ref()
     ref1.on('value', snap => {
-      snap.child('menu').forEach(child => {
+      snap.child('test').forEach(child => {
         if (child) {
           update.push(child.val())
         }
       })
       snap.child('category').forEach(each => {
-          list.push(each.val())
-        })
+        list.push(each.val())
+      })
 
       this.setState({ menu: update, category: list })
-      // console.log('this.state', this.state)
-      })
-      
+      console.log('this.state', this.state)
+    })
+
   }
 
 
 
   render() {
 
-    // console.log('render')
+  //  { console.log('render')}  
 
     return (
-      <div className = "App">
+      <div className="App">
 
         <Tabs>
 
           <TabList>
             {this.state.category.map((item) => {
               return <Tab>{item}</Tab>
-              })
+            })
             }
           </TabList>
 
-          
-          {this.state.category.map(each => {
+
+          {this.state.category.map(item => {
             return (
               <TabPanel>
                 <div>
@@ -63,17 +63,30 @@ class Menupage extends Component {
                   <div className="priceHeading">Price</div>
                   <br />
                 </div>
-                {this.state.category.map((item) => {
-                    return <Each category = {item} list = {this.state.menu}/> 
-                  })
-                }
-                
+
+                {/* // sending each catagory to be searched
+                // and drawing matched item */}
+
+
+                {this.state.menu.map(food => {
+                  // console.log('item', item)
+                  if (food.category === item) {
+
+                    // console.log('food.name', food.name)
+                    // console.log('food.price', food.price)
+                    return <Each name = {food.name} price = {food.price}/>
+                  }
+                })}
+
+
+
+
               </TabPanel>
             );
 
-            })
+          })
           }
-         
+
 
         </Tabs>
 
