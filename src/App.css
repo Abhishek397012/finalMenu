@@ -1,77 +1,76 @@
-.App {
+*{
+  margin: 0px;
+  padding: 0px;
+ 
+}
+.head{
+  text-align: center;
+  color: white;
+  background-image: url(BG.jpg);
+  padding: 25px;
+  border-bottom: 2px solid black;
+}
+
+.tablist{
+  width: 100%;
+  background-color:#fcb92d;
+  border-bottom: 1px solid black;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tab{
+display: inline-block;
+padding: 8px;
+font: bold;
+background-color:#c45135;
+margin-top: 4px;
+border-top: 1px solid black;
+border-right: 2px solid black;
+border-top-right-radius: 18px;
 }
+
+.tab:hover{
+  cursor: pointer;
+  background-color:darkgrey;
+}
+
 
 .nameHeading{
+  background-color: #c45135;
+  font-size: 18px;
   float:left;
   width: 50%;
-  margin-bottom: 20px;
+  padding-bottom: 5px;
   font-weight: bold;
-
+  border-bottom: 1px solid darkgrey;
 }
-
 .priceHeading{
+  background-color: #c45135;
+  font-size: 18px;
   float:right;
   width: 50%;
-  margin-bottom: 20px;
+  padding-bottom: 5px;
   font-weight: bold;
+  border-bottom: 1px solid darkgrey;
+}
 
+
+.panel{
+  background-image: url(BG.jpg);
+  overflow: scroll;
+  text-align: center;
+  border: 2px solid blue;
 }
 
 .name{
+  font-size: 15px;
   float:left;
   width: 50%;
-  margin-top: 5px;
-  margin-bottom: 5px;
- 
+  padding-top: 10px;
 }
 
 .price{
+  font-size: 15px;
   float:right;
   width: 50%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.tabs{
-  display: inline-block;
-}
-
-.head{
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding-top: 10px;
 }

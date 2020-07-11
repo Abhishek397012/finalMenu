@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Draw from './draw'
 
-export class Each extends Component {
+ class Each extends Component {
 
     constructor(props) {
         super(props)
@@ -9,14 +9,12 @@ export class Each extends Component {
 
 
     render() {
-        // { console.log('this.props.name', this.props.name) }
-        // { console.log('this.props.price', this.props.price) }
         return (
             <div>   
-                <div className="name">{this.props.name}</div>
+                <div className="name" >{this.props.name}</div>
                 <div className="price">{this.props.price}</div>
-                <br />
             </div>
+
         )
     }
 }

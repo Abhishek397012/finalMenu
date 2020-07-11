@@ -31,7 +31,7 @@ class Menupage extends Component {
       })
 
       this.setState({ menu: update, category: list })
-      console.log('this.state', this.state)
+      // console.log('this.state', this.state)
     })
 
   }
@@ -40,59 +40,42 @@ class Menupage extends Component {
 
   render() {
 
-  //  { console.log('render')}  
+    //  { console.log('render')}  
 
     return (
-      <div className="App">
-
         <Tabs>
+          <div className ="tablist">
+            <TabList>
+              {this.state.category.map((item) => {
+                return (<Tab className="tab">{item}</Tab>)
+              })
+              }
+            </TabList>
+          </div>
 
-          <TabList>
+          
             {this.state.category.map((item) => {
-              return <Tab>{item}</Tab>
+              return (
+                <TabPanel className="panel">
+                  <div>
+                    <div className="nameHeading">Name</div>
+                    <div className="priceHeading">Price</div>
+                  </div>
+                  <div >
+                    {/* // sending each catagory to be searched
+                    // and drawing matched item */}
+                    {this.state.menu.map(food => {
+                      if (food.category === item) {
+                        return <Each name={food.name} price={food.price} />
+                      }
+                    })}
+                  </div>
+                </TabPanel>
+              );
             })
             }
-          </TabList>
-
-
-          {this.state.category.map(item => {
-            return (
-              <TabPanel>
-                <div>
-                  <div className="nameHeading">Name</div>
-                  <div className="priceHeading">Price</div>
-                  <br />
-                </div>
-
-                {/* // sending each catagory to be searched
-                // and drawing matched item */}
-
-
-                {this.state.menu.map(food => {
-                  // console.log('item', item)
-                  if (food.category === item) {
-
-                    // console.log('food.name', food.name)
-                    // console.log('food.price', food.price)
-                    return <Each name = {food.name} price = {food.price}/>
-                  }
-                })}
-
-
-
-
-              </TabPanel>
-            );
-
-          })
-          }
-
-
         </Tabs>
-
-
-
-      </div>
+    
     )
   }
 }
